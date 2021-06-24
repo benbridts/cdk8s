@@ -3,7 +3,7 @@
 ![](./website/static/images/opengraph.jpg)
 
 ![Stability:Alpha](https://img.shields.io/badge/stability-alpha-orange)
-![Release](https://github.com/awslabs/cdk8s/workflows/Release/badge.svg)
+![Release](https://github.com/cdk8s-team/cdk8s/workflows/Release/badge.svg)
 [![npm version](https://badge.fury.io/js/cdk8s.svg)](https://badge.fury.io/js/cdk8s)
 [![PyPI version](https://badge.fury.io/py/cdk8s.svg)](https://badge.fury.io/py/cdk8s)
 [![NuGet version](https://badge.fury.io/nu/Org.Cdk8s.svg)](https://badge.fury.io/nu/Org.Cdk8s)
@@ -15,7 +15,7 @@ applications and reusable abstractions using familiar programming languages and
 rich object-oriented APIs. cdk8s generates pure Kubernetes YAML - you can use
 cdk8s to define applications for any Kubernetes cluster running anywhere.
 
-This is an early-stage, experimental project built with ❤️ by AWS. We encourage you to [try it out](#getting-started), [leave feedback](#help--feedback), and [jump in to help](#contributing)!
+CDK8s is a [Cloud Native Computing Foundation](https://www.cncf.io) Sandbox Project, built with ❤️ at AWS. We encourage you to [try it out](#getting-started), [leave feedback](#help--feedback), and [jump in to help](#contributing)!
 
 Contents:
 
@@ -69,9 +69,9 @@ See the [Getting Started](https://cdk8s.io/docs/latest/getting-started) guide in
 Interacting with the community and the development team is a great way to
 contribute to the project. Please consider the following venues (in order):
 
-- Search [open issues](https://github.com/awslabs/cdk8s/issues)
+- Search [open issues](https://github.com/cdk8s-team/cdk8s/issues)
 - Stack Overflow: [cdk8s](https://stackoverflow.com/questions/tagged/cdk8s)
-- File a [new issue](https://github.com/awslabs/cdk8s/issues/new/choose)
+- File a [new issue](https://github.com/cdk8s-team/cdk8s/issues/new/choose)
 - Mailing list: [cdk8s](https://groups.google.com/forum/#!forum/cdk8s)
 - Slack: #cdk8s channel in [cdk.dev](https://cdk.dev)
 
@@ -85,7 +85,7 @@ See our [Examples Directory](./examples).
 
 ## Roadmap
 
-See our [roadmap](https://github.com/awslabs/cdk8s/projects/1) for details about our plans for the project.
+See our [roadmap](https://github.com/cdk8s-team/cdk8s/projects/1) for details about our plans for the project.
 
 ## Community
 

@@ -30,6 +30,11 @@ const project = new NodeProject({
     'typescript',
     'projen',
   ],
+  autoApproveOptions: {
+    allowedUsernames: ['cdk8s-automation'],
+    secret: 'GITHUB_TOKEN'
+  },
+  autoApproveUpgrades: true,
 });
 
 project.gitignore.addPatterns('*.js');
@@ -49,7 +54,7 @@ project.tasks.removeTask('test:update');
 project.tasks.removeTask('test:compile');
 
 // integ tests
-const integ = project.addTask('integ', { 
+const integ = project.addTask('integ', {
   exec: 'test/test-all.sh',
   env: { UPDATE_SNAPSHOTS: '1' }
 });
@@ -70,10 +75,19 @@ workflow.addJobs({
     permissions: {
       contents: JobPermission.WRITE,
     },
-    if: "startsWith(github.event.head_commit.message, 'chore(release)')",
     runsOn: 'ubuntu-18.04',
     steps: [
-      { uses: 'actions/checkout@v2' },
+      {
+        name: 'Checkout sources',
+        uses: 'actions/checkout@v2'
+      },
+      {
+        name: 'Setup Node.js',
+        uses: 'actions/setup-node@v2',
+        with: {
+          'node-version': '14',
+        },
+      },
       {
         name: 'Setup Hugo',
         uses: 'peaceiris/actions-hugo@v2',
@@ -83,11 +97,16 @@ workflow.addJobs({
         },
       },
       {
+        name: 'Setup Python',
         uses: 'actions/setup-python@v2',
         with: {
           'python-version': '3.x',
           'architecture': 'x64',
         },
+      },
+      {
+        name: 'Install dependencies',
+        run: 'yarn install --frozen-lockfile',
       },
       {
         name: 'Build Website',
